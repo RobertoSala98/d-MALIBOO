@@ -1,12 +1,6 @@
-<div align="center">
-  <img src="https://github.com/brunoguindani/MALIBOO/blob/master/resources/bo_dark_4.png" width="80%" height="80%"><br><br>
-</div>
-
-# MALIBOO
-MALIBOO (MAchine Learning In Bayesian OptimizatiOn) is a Python library which performs Bayesian Optimization (BO) on single-output black-box functions, or on their tabular representation.
-The implemented BO algorithms are integrated with Machine Learning techniques.
-
-This library originates as a fork from the [BayesianOptimization](https://github.com/fmfn/BayesianOptimization) package from Fernando Nogueira ([@fmfn](https://github.com/fmfn)), which was started in 2014.
+# d-MALIBOO
+d-MALIBOO (discrete MAchine Learning In Bayesian OptimizatiOn) is a Python library which performs discrete Bayesian Optimization (BO) on single-output black-box functions, or on their tabular representation.
+The implemented BO algorithms are integrated with Machine Learning techniques and with a reparameterization technique of the parameters of the surrogate model.
 
 
 ## Installing
