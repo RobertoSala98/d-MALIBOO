@@ -102,4 +102,9 @@ If `maximize()` is called with such option set to `True`, the acquisition functi
 This means that the point found at the current iteration is the discrete approximation of the solution of a continuous relaxation.
 If `False` (which is also the default value), the acquisition function will only be evaluated on the dataset points as usual, therefore an exact maximizer will be found, without any approximation taking place.
 
-For further information, please also refer to the well-documented [Python files](https://github.com/brunoguindani/BayesianOptimization/tree/master/maliboo) of the project.
+### References
+
+[1] Sala, Roberto, et al. "d-MALIBOO: a Bayesian Optimization framework for dealing with Discrete Variables." 2024 32nd International Conference on Modeling, Analysis and Simulation of Computer and Telecommunication Systems (MASCOTS). IEEE, 2024.
+
+[2] Sala, Roberto, et al. "Discrete Bayesian Optimization via Machine Learning." Performance Evaluation (2025): 102487.
+
