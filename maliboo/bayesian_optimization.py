@@ -627,7 +627,10 @@ class BayesianOptimization(Observable):
                 # No dataset, or dataset for X only: we evaluate the target function directly
                 if self._debug: print("No dataset, or dataset for X only: evaluating target function")
                 _ml_target = acq_info['ml_target'](np.array([v for k, v in x_probe.items()]))
-                feasibility = _ml_target >= util.ml_bounds[0] and _ml_target <= util.ml_bounds[1]
+                if ml_on_bounds:
+                    feasibility = _ml_target >= util.ml_bounds[0] and _ml_target <= util.ml_bounds[1]
+                else:
+                    feasibility = True
                 target_value = self.probe(x_probe, idx=idx, lazy=False, feasibility=feasibility)
             else:
                 # Dataset for both X and y: register point entirely from dataset without probe()
@@ -644,7 +647,7 @@ class BayesianOptimization(Observable):
                 self.register(self._space.params_to_array(x_probe), target_value, idx, feasibility, reparametrized)
 
             # Compute ML prediction and check stopping condition
-            if callable(util.ml_target):
+            if ml_on_target and callable(util.ml_target):
                 y_true_ml = util.ml_target(np.array(self.space.params.iloc[-1]))
             else:
                 y_true_ml = self.get_ml_target_data(util.ml_target).iloc[-1] if hasattr(util, 'ml_model') else None
